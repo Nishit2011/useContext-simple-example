@@ -5,11 +5,12 @@ import Child from "./Child";
 export const NameContext = React.createContext();
 const Parent = () => {
   const { Provider } = NameContext;
+  const [value, setValue] = React.useState("");
 
   //passing a value in the provider
   return (
     <div>
-      <Provider value="abcccc">
+      <Provider value={{ value, setValue }}>
         <Child />
       </Provider>
     </div>
